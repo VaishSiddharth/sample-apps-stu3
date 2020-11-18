@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="node_modules/fhirclient/fhir-client.js"></script>
-    <script>
-      FHIR.oauth2.authorize({
-        "client": {
-            "client_id": "my_web_app",
-            "scope":  "patient/*.read launch/patient"
-        },
-        "server": "https://launch.smarthealthit.org/v/r3/sim/eyJoIjoiMSIsImoiOiIxIn0/fhir"
-      });
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/fhirclient@2.3.1/build/fhir-client.min.js"></script>
+  <script>
+    FHIR.oauth2.authorize({
+      "client_id": "smartClient",
+      "scope": "patient/*.read launch/patient",
+      "iss": "http://localhost:8080/openmrs/ws/fhir2/R4",
+      "redirect_uri": "index.html"
+    })
     </script>
-  </head>
-  <body>Loading...</body>
+</head>
+<body>Loading...</body>
 </html>
